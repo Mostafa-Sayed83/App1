@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import Home from "./components/Home/Home"
 import Cart from "./components/Cart/Cart"
@@ -28,7 +28,7 @@ import ResetPassword from "./components/ResetPassword/ResetPassword"
 
 
 
-let x =createBrowserRouter([
+let x =createHashRouter([
   {path:"", element:<Layout/>, children:[
     {index:true, element:<ProtectedRouter><Home/></ProtectedRouter>},
     {path:"/cart", element:<ProtectedRouter><Cart/></ProtectedRouter>},
